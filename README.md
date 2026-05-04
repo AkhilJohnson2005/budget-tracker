@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+# 💰 Budget Tracker — Personal Finance Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Full Stack web application built with **React.js**, **Node.js + Express**, and **MongoDB**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Project Description
 
-### `npm start`
+This app allows users to manage their personal finances by tracking income and expenses. It includes a dashboard with summary cards, analytics with charts, a budget & goals tracker, and a settings page — all behind a secure login system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React.js, React Router, Axios, Recharts |
+| Backend | Node.js, Express.js |
+| Database | MongoDB (via Mongoose) |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✨ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🔐 User Authentication (Signup / Login)
+- 📊 Dashboard with income, expense, balance summary
+- 💸 Add, view, and delete transactions
+- 📈 Analytics page with charts (bar, line, pie, heatmap, scatter)
+- 🎯 Budget & Goals tracker with circular progress
+- ⚙️ Settings page (profile, notifications, appearance, data export)
+- 🔍 Filter transactions by date, type, and category
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Project Structure
 
-### `npm run eject`
+```
+budget-tracker/
+├── client/                  → React frontend code
+│   ├── public/
+│   └── src/
+│       ├── App.js
+│       ├── index.js
+│       └── components/
+│           ├── Dashboard.js
+│           ├── Transactions.js
+│           ├── AddTransaction.js
+│           ├── TransactionList.js
+│           ├── SummaryCards.js
+│           ├── Analytics.js
+│           ├── BudgetGoals.js
+│           ├── Settings.js
+│           ├── Sidebar.js
+│           ├── Login.js
+│           └── Signup.js
+├── server/                  → Node.js + Express backend code
+│   ├── index.js
+│   ├── models/
+│   │   ├── Transaction.js
+│   │   └── User.js
+│   ├── routes/
+│   │   ├── transactions.js
+│   │   └── auth.js
+│   └── package.json
+├── .gitignore
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Installation Steps
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+- Node.js installed
+- MongoDB running locally (`mongodb://localhost:27017`)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### Backend Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd server
+npm install
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Server starts at **http://localhost:5000**
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Frontend Setup
 
-### Analyzing the Bundle Size
+```bash
+cd ..
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+App opens at **http://localhost:3000**
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🔌 API Endpoints
 
-### Advanced Configuration
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/signup` | Register a new user |
+| POST | `/api/auth/login` | Login existing user |
+| GET | `/api/transactions/:user` | Get all transactions for a user |
+| POST | `/api/transactions` | Add a new transaction |
+| DELETE | `/api/transactions/:id` | Delete a transaction by ID |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🚀 How to Run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Make sure MongoDB is running locally
+2. Open **two terminals**
 
-### `npm run build` fails to minify
+**Terminal 1 — Backend:**
+```bash
+cd server
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Terminal 2 — Frontend:**
+```bash
+npm start
+```
+
+3. Open **http://localhost:3000** in your browser
+4. Sign up for an account and start tracking!
+
+---
+
+## 👤 Author
+
+**Akhil Johnson**  
+GitHub: [@AkhilJohnson2005](https://github.com/AkhilJohnson2005)
