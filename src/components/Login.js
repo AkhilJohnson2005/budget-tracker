@@ -4,9 +4,10 @@ import axios from "axios";
 import "./Auth.css";
 
 const Login = ({ setIsLoggedIn }) => {
+  // ✅ Pre-filled demo credentials
   const [form, setForm] = useState({
-    username: "",
-    password: ""
+    username: "lux",
+    password: "2005"
   });
 
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = ({ setIsLoggedIn }) => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${process.env.REACT_APP_API_URL}/api/auth/login`,
         form
       );
 
@@ -39,6 +40,9 @@ const Login = ({ setIsLoggedIn }) => {
       <div className="auth-card">
         <h2>Welcome Back 👋</h2>
         <p>Login to continue</p>
+
+        {/* Optional hint */}
+        <p className="demo-hint">Demo account is pre-filled</p>
 
         <form onSubmit={handleLogin}>
           <input

@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     if (username) {
       axios
-        .get(`http://localhost:5000/api/transactions/${username}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/transactions/${username}`)
         .then((res) => setTransactions(res.data))
         .catch((err) => console.log(err));
     }
@@ -35,7 +35,7 @@ function App() {
   const addTransaction = async (data) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/transactions",
+        `${process.env.REACT_APP_API_URL}/api/auth/login`,
         { ...data, user: username }
       );
       setTransactions([...transactions, res.data]);
@@ -46,7 +46,7 @@ function App() {
 
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/transactions/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/transactions/${id}`);
       setTransactions(transactions.filter((t) => t._id !== id));
     } catch (err) {
       console.log(err);

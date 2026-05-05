@@ -84,7 +84,7 @@ npm install
 npm start
 ```
 
-Server starts at **http://localhost:5000**
+Server starts at **${process.env.REACT_APP_API_URL}**
 
 ---
 
