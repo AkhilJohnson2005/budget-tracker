@@ -34,6 +34,8 @@ const Sidebar = () => {
       backgroundColor: "#1e1e2f",
       color: "white",
       padding: "20px",
+      paddingBottom: "30px",
+      boxSizing: "border-box",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
