@@ -15,7 +15,6 @@ const Sidebar = () => {
   const username = localStorage.getItem("currentUser");
   const fullName = localStorage.getItem("fullName");
   const avatar = localStorage.getItem("avatar");
-
   const initials = fullName
     ? fullName.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)
     : username?.slice(0, 2).toUpperCase() || "U";
@@ -30,7 +29,8 @@ const Sidebar = () => {
   return (
     <div style={{
       width: "220px",
-      minHeight: "100vh",
+      height: "100vh",
+      overflow: "hidden",
       backgroundColor: "#1e1e2f",
       color: "white",
       padding: "20px",
@@ -69,9 +69,7 @@ const Sidebar = () => {
           </Link>
         ))}
       </div>
-
       <div>
-        {/* User info */}
         <div style={{
           display: "flex",
           alignItems: "center",
@@ -96,7 +94,6 @@ const Sidebar = () => {
           </div>
           <span style={{ fontSize: "14px" }}>{fullName || username}</span>
         </div>
-
         <button
           onClick={handleLogout}
           style={{

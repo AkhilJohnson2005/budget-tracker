@@ -20,7 +20,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("loggedIn") === "true"
   );
-
   const username = localStorage.getItem("currentUser");
 
   useEffect(() => {
@@ -35,7 +34,7 @@ function App() {
   const addTransaction = async (data) => {
     try {
       const res = await axios.post(
-        `https://budget-tracker-ahav.onrender.com/api/auth/login`,
+        `https://budget-tracker-ahav.onrender.com/api/transactions`,
         { ...data, user: username }
       );
       setTransactions([...transactions, res.data]);
@@ -55,9 +54,9 @@ function App() {
 
   return (
     <Router>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>
         {isLoggedIn && <Sidebar />}
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", overflowY: "auto", height: "100vh" }}>
           <Routes>
             {!isLoggedIn && (
               <>
