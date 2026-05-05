@@ -84,7 +84,7 @@ npm install
 npm start
 ```
 
-Server starts at **${process.env.REACT_APP_API_URL}**
+Server starts at **https://budget-tracker-ahav.onrender.com**
 
 ---
 

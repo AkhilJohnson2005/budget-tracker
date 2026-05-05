@@ -21,7 +21,7 @@ const Login = ({ setIsLoggedIn }) => {
 
     try {
       await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/login`,
+        `https://budget-tracker-ahav.onrender.com/api/auth/login`,
         form
       );
 
