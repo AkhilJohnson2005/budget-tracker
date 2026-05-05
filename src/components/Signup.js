@@ -18,9 +18,9 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    try {
+    try {s
       await axios.post(
-        `https://budget-tracker-ahav.onrender.com/api/auth/login`,
+        `https://budget-tracker-ahav.onrender.com/api/auth/signup`,
         form
       );
 
